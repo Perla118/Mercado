@@ -63,7 +63,8 @@ namespace Mercado
 
             for (int i = 0; i < cantidadProductos; i++)
             {
-                if (Math.Abs(inventario[i].Precio - precioaBuscar) < 0.0001)
+                // Comparación de precios sin usar Math.Abs
+                if (inventario[i].Precio == precioaBuscar)
                 {
                     Console.WriteLine($"Producto {inventario[i].Nombre} Precio {inventario[i].Precio}");
                     encontrado = true;
@@ -75,7 +76,9 @@ namespace Mercado
                 Console.WriteLine("No hay");
             }
         }
-    }
 
+
+
+    }
 
 }
