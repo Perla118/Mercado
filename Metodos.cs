@@ -9,7 +9,7 @@ namespace Mercado
             string si = "si";
             //string respuesta1;
             string respuesta1 = Console.ReadLine();
-
+//Uncoment
             Console.WriteLine("Quieres ingresar un producto si o no");
             respuesta1 = Console.ReadLine();
             
