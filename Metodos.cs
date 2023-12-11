@@ -14,7 +14,7 @@ namespace Mercado
 
         private static int cantidadProductos = 0;
 
-        // Para insertar un producto en el arreglo
+        // inserta en el arregloo
         public static void InsertarProducto(string nombre, double precio)
         {
             if (cantidadProductos < inventario.Length)
@@ -29,7 +29,7 @@ namespace Mercado
             }
         }
 
-        // productos del arreglo
+        // muestar los priductos del arreglo
         public static void MostrarProductos()
         {
             if (cantidadProductos == 0)
@@ -63,7 +63,7 @@ namespace Mercado
 
             for (int i = 0; i < cantidadProductos; i++)
             {
-                // Comparación de precios sin usar Math.Abs
+               
                 if (inventario[i].Precio == precioaBuscar)
                 {
                     Console.WriteLine($"Producto {inventario[i].Nombre} Precio {inventario[i].Precio}");
@@ -76,9 +76,6 @@ namespace Mercado
                 Console.WriteLine("No hay");
             }
         }
-
-
-
     }
 
 }
