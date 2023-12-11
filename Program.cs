@@ -35,12 +35,12 @@ namespace Mercado
                         continue;
                     }
 
-                    Metodos.InsertarProducto(nombre, precio);
+                    metodos.InsertarProducto(nombre, precio);
                     Console.WriteLine("Producto insertado.");
                 }
                 else if (opcion == 2)
                 {
-                    Metodos.MostrarProductos();
+                    metodos.MostrarProductos();
                 }
                 else if (opcion == 3)
                 {
@@ -52,7 +52,7 @@ namespace Mercado
                         continue;
                     }
 
-                    Metodos.BuscarPorPrecio(precioBusqueda);
+                    metodos.BuscarPorPrecio(precioBusqueda);
                 }
              
             }
