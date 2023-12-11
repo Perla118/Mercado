@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,12 +11,12 @@ namespace Mercado
     {
 
         private const int tamañoMercado = 5;
-        private static Producto[] inventario = new Producto[tamañoMercado];
+        private Producto[] inventario = new Producto[tamañoMercado];
 
-        private static int cantidadProductos = 0;
+        private int cantidadProductos = 0;
 
         // inserta en el arregloo
-        public static void InsertarProducto(string nombre, double precio)
+        public void InsertarProducto(string nombre, double precio)
         {
             if (cantidadProductos < inventario.Length)
             {
@@ -30,7 +31,7 @@ namespace Mercado
         }
 
         // muestar los priductos del arreglo
-        public static void MostrarProductos()
+        public void MostrarProductos()
         {
             if (cantidadProductos == 0)
             {
@@ -47,13 +48,16 @@ namespace Mercado
 
         //Ordenar inventaurio
 
-        public static void OrdenarInventario()
-        {
+        //public static void OrdenarInventario()
+        //{
+        //    for (int i = 0; i < 10;i )
+        //    {
 
-        }
+        //    }
+        //}
 
         // Busqnda por precio 
-        public static void BuscarPorPrecio(double precioaBuscar)
+        public void BuscarPorPrecio(double precioaBuscar)
         {
             bool encontrado = false;
 
