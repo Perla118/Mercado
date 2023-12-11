@@ -47,12 +47,10 @@ namespace Mercado
 
         //Ordenar inventaurio
 
+        public static void OrdenarInventario()
+        {
 
-
-
-
-
-
+        }
 
         // Busqnda por precio 
         public static void BuscarPorPrecio(double precioaBuscar)
