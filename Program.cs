@@ -1,4 +1,4 @@
-﻿namespace Mercado
+namespace Mercado
 {
     internal class Program
     {
@@ -7,80 +7,55 @@
             Metodos metodos= new Metodos();
 
 
-            //string respuesta1;
-            string respuesta1 = Console.ReadLine();
+            int opcion = 0;
 
-            Console.WriteLine("Quieres ingresar un producto si o no");
-            respuesta1 = Console.ReadLine();
-            
-
-            if (respuesta1 == si)
+            while (opcion != 3)
             {
-                
-                Console.Write("Nombre del producto");
-                string nombre = Console.ReadLine();
+                Console.WriteLine("Mercado de venta de productos");
+                Console.WriteLine("1 Si quieres insertar un producto");
+                Console.WriteLine("2 si quieres ver los productos en le arreglo");
+                Console.WriteLine("3 Si quieres buscar un producto por precio");
 
-                Console.Write("Precio del producto");
-                double precio = double.Parse(Console.ReadLine());
+                if (!int.TryParse(Console.ReadLine(), out opcion))
+                {
+                    Console.WriteLine("Opción no valida");
+                    continue;
+                }
+
+                if (opcion == 1)
+                {
+                    Console.WriteLine("Nombre del producto:");
+                    string nombre = Console.ReadLine();
+
+                    Console.WriteLine("Precio del producto:");
+                    double precio;
+                    if (!double.TryParse(Console.ReadLine(), out precio))
+                    {
+                        Console.WriteLine("Precio");
+                        continue;
+                    }
+
+                    Metodos.InsertarProducto(nombre, precio);
+                    Console.WriteLine("Producto insertado.");
+                }
+                else if (opcion == 2)
+                {
+                    Metodos.MostrarProductos();
+                }
+                else if (opcion == 3)
+                {
+                    Console.WriteLine("Precio a buscar");
+                    double precioBusqueda;
+                    if (!double.TryParse(Console.ReadLine(), out precioBusqueda))
+                    {
+                        Console.WriteLine("No valido");
+                        continue;
+                    }
+
+                    Metodos.BuscarPorPrecio(precioBusqueda);
+                }
+             
             }
-            else
-            {
-                metodos.MostrarProducto();
-            }
-
-
-
-            //Console.WriteLine("Quieres ingresar otro producto si o no");
-            //respuesta1 = Console.ReadLine();
-
-
-            //if (respuesta1 == si)
-            //{
-            //    Console.Write("Nombre del producto");
-            //    string nombre = Console.ReadLine();
-
-            //    Console.Write("Precio del producto");
-            //    double precio = double.Parse(Console.ReadLine());
-            //}
-            //else
-            //{
-            //    metodos.MostrarProducto();
-            //}
-
-
-
-            //Console.WriteLine("Quieres buscar un producto si o no");
-            //respuesta1 = Console.ReadLine();
-
-
-            //if (respuesta1 == si)
-            //{
-
-            //    Console.Write("Precio del producto");
-            //    double precio = double.Parse(Console.ReadLine());
-
-            //}
-            //else
-            //{
-            //    metodos.MostrarProducto();
-            //}
-
-
-
-
-            //Console.WriteLine("Quieres ver la lista de los productos");
-            //respuesta1 = Console.ReadLine();
-
-
-            //if (respuesta1 == si)
-            //{
-            //    metodos.MostrarProducto();
-            //}
-            //else
-            //{
-            //    Console.WriteLine("Idk no hay productos");
-            //}
-
         }
     }
 }
