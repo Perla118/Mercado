@@ -10,7 +10,7 @@ namespace Mercado
     {
 
         private const int tamañoMercado = 5;
-        private static Productos[] inventario = new Productos[tamañoMercado];
+        private static Producto[] inventario = new Producto[tamañoMercado];
 
         private static int cantidadProductos = 0;
 
@@ -19,7 +19,7 @@ namespace Mercado
         {
             if (cantidadProductos < inventario.Length)
             {
-                inventario[cantidadProductos] = new Productos { Nombre = nombre, Precio = precio };
+                inventario[cantidadProductos] = new Producto { Nombre = nombre, Precio = precio };
                 cantidadProductos++;
                 Console.WriteLine("Producto");
             }
